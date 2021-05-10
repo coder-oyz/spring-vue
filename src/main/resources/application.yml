@@ -1,0 +1,36 @@
+server:
+  port: 8080
+  session.timeout: 60000
+  servlet.contextpath: /springboot-vue
+
+logging:
+  level:
+    root: warn
+    org.springframework: warn
+    com.yc: info
+  file:
+    path: ./logs
+    name: yc_vue.log
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/res?serverTimezone=GMT%2B8
+    username: root
+    password: a
+
+  jpa:
+    show-sql: true
+    database: mysql
+    properties:
+      hibernate:
+        format-sql: true
+
+
+
+#spring devtools 更改类程序文件不使用热部署自动重启
+spring.devtools.restart.enabled: false
+spring.devtools.livereload.enabled: false
+
+swagger:
+  enable: true
